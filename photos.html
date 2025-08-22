@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polaroid Photo Gallery</title>
+    <link rel="stylesheet" type="text/css" href="css/photos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/oshawott.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="timer.js" defer></script>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <h1><a href="index.html">Us though the lens</a></h1>
+    </div>
+    <div class="buttons">
+      <!-- Back to Homepage button -->
+      <button class="back-button" onclick="location.href='index.html'">
+        <i class="material-icons">arrow_back</i>
+      </button>
+
+      <!-- Play and Pause buttons -->
+      <button id="play-btn">
+        <i class="material-icons">play_arrow</i>
+      </button>
+      <button id="pause-btn">
+        <i class="material-icons">pause</i>
+      </button>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="img/1.jpg" />
+        <figcaption>for every big back meal</figcaption>
+      </figure>
+      <figure>
+        <img src="img/2.jpg" />
+        <figcaption>for every 6 Chinese donuts we get</figcaption>
+      </figure>
+      <figure>
+        <img src="img/3.jpg" />
+        <figcaption>for every adventure we go</figcaption>
+      </figure>
+      <figure>
+        <img src="img/4.jpg" />
+        <figcaption>for every Pokemon we pull</figcaption>
+      </figure>
+    </div>
+    <footer id="timer-container">
+      We have been together for: <span id="timer"></span>
+    </footer>
+    <audio
+      id="background-audio"
+      src="img/No One Noticed.mp3"
+      preload="auto"
+      loop
+      volume="0.5"
+    ></audio>
+    <script>
+      document
+        .getElementById("play-btn")
+        .addEventListener("click", function () {
+          var audio = document.getElementById("background-audio");
+          audio.play().catch(function (error) {
+            console.log("Autoplay was prevented: ", error);
+          });
+        });
+
+      document
+        .getElementById("pause-btn")
+        .addEventListener("click", function () {
+          var audio = document.getElementById("background-audio");
+          audio.pause();
+        });
+
+      // Attempt to play the audio when the page loads (autoplay may be prevented by browser)
+      window.addEventListener("load", function () {
+        var audio = document.getElementById("background-audio");
+        audio.play().catch(function (error) {
+          console.log("Autoplay was prevented: ", error);
+        });
+      });
+    </script>
+  </body>
+</html>

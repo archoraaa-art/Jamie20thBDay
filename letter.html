@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/oshawott.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="timer.js" defer></script>
+    <title>Letter For You</title>
+    <link rel="stylesheet" href="css/letter.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <h1><a href="index.html">To my love</a></h1>
+    </div>
+    <div class="buttons">
+      <!-- Back to Homepage button -->
+      <button class="back-button" onclick="location.href='letterpage.html'">
+        <i class="material-icons">arrow_back</i>
+      </button>
+
+      <!-- Play and Pause buttons -->
+      <button id="play-btn">
+        <i class="material-icons">play_arrow</i>
+      </button>
+      <button id="pause-btn">
+        <i class="material-icons">pause</i>
+      </button>
+    </div>
+    <div class="paper">
+      <div class="content">
+        <p>
+          Dear my love, HAPPY BIRTHDAY!!! Are we gonna be shaking ass or shaking
+          ass TODAYY😛 ur 20? And so unc af rn. Can’t believe I’ve known u since
+          we were 4 and now we’re in our twentiesss. I hope today you’ll have
+          the best and first birthday with me! It’s been really fun putting and
+          planning everything together for you so I hope you enjoy it as much I
+          did. Lowk don’t know if it’s a blessing or a curse with all the gaming
+          stuff I got u cuz now u won’t get off that damn computer but you
+          NEEDED that upgrade so I hope you love it because I know you needed
+          it. I love you FOR EVERY minute we spend together, for each pokemon
+          pack we open (god pack will happen) and every big back hot pot run we
+          go (with extra Chinese donuts). Thank you for being the best boyfriend
+          ever and always being there for me when I need you the most. I love
+          you so much my unc ass baby, WE IN OUR 20s NOW TIME TO SHAKE ASS -
+          love Nicole
+        </p>
+      </div>
+    </div>
+    <footer id="timer-container">
+      We have been together for: <span id="timer"></span>
+    </footer>
+    <audio
+      id="background-audio"
+      src="img/august.mp3"
+      preload="auto"
+      loop
+      volume="0.5"
+    ></audio>
+    <script>
+      document
+        .getElementById("play-btn")
+        .addEventListener("click", function () {
+          var audio = document.getElementById("background-audio");
+          audio.play().catch(function (error) {
+            console.log("Autoplay was prevented: ", error);
+          });
+        });
+
+      document
+        .getElementById("pause-btn")
+        .addEventListener("click", function () {
+          var audio = document.getElementById("background-audio");
+          audio.pause();
+        });
+
+      // Attempt to play the audio when the page loads (autoplay may be prevented by browser)
+      window.addEventListener("load", function () {
+        var audio = document.getElementById("background-audio");
+        audio.play().catch(function (error) {
+          console.log("Autoplay was prevented: ", error);
+        });
+      });
+    </script>
+  </body>
+</html>
